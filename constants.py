@@ -23,25 +23,16 @@ CREATE_INVENTORY_TABLE_QUERY = """
             FOREIGN KEY (money_type_id) REFERENCES money(id)
             )"""
 
+
 INVENTORY_INITIAL_DATA = [
-    ('BILL', 200, 7),
-    ('BILL', 100, 4),
-    ('BILL', 20, 15),
+    ('BILL', 200, 1),
+    ('BILL', 100, 2),
+    ('BILL', 20, 5),
     ('COIN', 10, 10),
     ('COIN', 1, 10),
-    ('COIN', 5, 1),
-    ('COIN', 0.1, 12),
-    ('COIN', 0.01, 21)]
-
-# INVENTORY_INITIAL_DATA = [
-#     ('BILL', 200, 1),
-#     ('BILL', 100, 2),
-#     ('BILL', 20, 5),
-#     ('COIN', 10, 10),
-#     ('COIN', 1, 10),
-#     ('COIN', 5, 10),
-#     ('COIN', 0.1, 1),
-#     ('COIN', 0.01, 10)]
+    ('COIN', 5, 10),
+    ('COIN', 0.1, 1),
+    ('COIN', 0.01, 10)]
 
 INITIAL_COIN_LIST_QUERY = """
             INSERT INTO money (type, value) VALUES
