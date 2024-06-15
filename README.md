@@ -28,3 +28,5 @@ curl --location 'http://127.0.0.1:8000/atm/withdrawal' \
 * MAX_NUM_OF_COINS=50 # set the max coin allowed.
 
 5. application is using embedded sqlite DB. atm.db will be created.
+6. to install all required packages : 
+   pip install -r requirements.txt
