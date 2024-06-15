@@ -22,9 +22,9 @@ curl --location 'http://127.0.0.1:8000/atm/withdrawal' \
 "amount": 21.20
 }'
 
-4. following env properties can be change :
+4. following env properties can be changed :
 * MAX_WITHDRAW_AMOUNT=2000 # set the max withdraw value
-* INIT_DB_FLAG=True # if set to false the DB will not be initiate when app is started default value is True.
+* INIT_DB_FLAG=True # if set to false the DB will not be initiated when app is started default value is True.
 * MAX_NUM_OF_COINS=50 # set the max coin allowed.
 
 5. application is using embedded sqlite DB. atm.db will be created.
