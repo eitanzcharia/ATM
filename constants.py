@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 MAX_WITHDRAW_AMOUNT = float(os.getenv("MAX_WITHDRAW_AMOUNT", "2000"))
-INIT_DB_FLAG = bool(os.getenv("INIT_DB_FLAG", False))
+INIT_DB_FLAG = os.getenv("INIT_DB_FLAG", "True").lower() in ("true", "1", "t")
 MAX_NUM_OF_COINS = int(os.getenv("MAX_NUM_OF_COINS", 50))
 
 CREATE_MONEY_TABLE_QUERY = """
@@ -23,25 +23,25 @@ CREATE_INVENTORY_TABLE_QUERY = """
             FOREIGN KEY (money_type_id) REFERENCES money(id)
             )"""
 
-# INVENTORY_INITIAL_DATA = [
-#     ('BILL', 200, 7),
-#     ('BILL', 100, 4),
-#     ('BILL', 20, 15),
-#     ('COIN', 10, 10),
-#     ('COIN', 1, 10),
-#     ('COIN', 5, 1),
-#     ('COIN', 0.1, 12),
-#     ('COIN', 0.01, 21)]
-
 INVENTORY_INITIAL_DATA = [
-    ('BILL', 200, 1),
-    ('BILL', 100, 2),
-    ('BILL', 20, 5),
+    ('BILL', 200, 7),
+    ('BILL', 100, 4),
+    ('BILL', 20, 15),
     ('COIN', 10, 10),
     ('COIN', 1, 10),
-    ('COIN', 5, 10),
-    ('COIN', 0.1, 1),
-    ('COIN', 0.01, 10)]
+    ('COIN', 5, 1),
+    ('COIN', 0.1, 12),
+    ('COIN', 0.01, 21)]
+
+# INVENTORY_INITIAL_DATA = [
+#     ('BILL', 200, 1),
+#     ('BILL', 100, 2),
+#     ('BILL', 20, 5),
+#     ('COIN', 10, 10),
+#     ('COIN', 1, 10),
+#     ('COIN', 5, 10),
+#     ('COIN', 0.1, 1),
+#     ('COIN', 0.01, 10)]
 
 INITIAL_COIN_LIST_QUERY = """
             INSERT INTO money (type, value) VALUES
